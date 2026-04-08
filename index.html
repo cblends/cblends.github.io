@@ -246,6 +246,81 @@
       filter: invert(1) hue-rotate(180deg);
     }
 
+    /* ── LOCATION ── */
+    .location-section {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: clamp(3rem, 8vw, 5rem) clamp(1.5rem, 6vw, 6rem);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .location-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .location-info h2 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .location-info p {
+      color: var(--muted);
+      font-size: clamp(0.85rem, 1.5vw, 0.9rem);
+      line-height: 1.85;
+      margin-bottom: 0.6rem;
+    }
+
+    .location-info p:last-child { margin-bottom: 0; }
+
+    .location-address {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-top: 1.4rem;
+      padding: 1rem 1.2rem;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .location-address-icon { color: var(--gold); font-size: 1rem; line-height: 1.6; }
+
+    .location-address-text {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .location-map {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 4/3;
+    }
+
+    .location-map iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      filter: invert(0.9) hue-rotate(180deg) saturate(0.6);
+    }
+
+    @media (max-width: 700px) {
+      .location-section {
+        grid-template-columns: 1fr;
+      }
+      .location-map { aspect-ratio: 16/9; }
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--surface);
@@ -348,6 +423,7 @@
     <nav>
       <ul>
         <li><a href="#about">About</a></li>
+        <li><a href="#location">Location</a></li>
         <li><a href="#booking">Book Now</a></li>
       </ul>
     </nav>
@@ -388,6 +464,32 @@
     </div>
   </section>
 
+  <!-- LOCATION -->
+  <section id="location" class="location-section">
+    <div class="location-info reveal">
+      <p class="section-label">Where to Find Us</p>
+      <h2>Come in,<br>sit down,<br><em>look sharp.</em></h2>
+      <p>All appointments take place at a private location in Runcorn, Brisbane. Easy parking, relaxed environment — just show up and let the work speak for itself.</p>
+      <div class="location-address">
+        <span class="location-address-icon">&#128205;</span>
+        <div class="location-address-text">
+          14 Cavill Place<br>
+          Runcorn QLD 4113<br>
+          Australia
+        </div>
+      </div>
+    </div>
+    <div class="location-map reveal">
+      <iframe
+        src="https://maps.google.com/maps?q=14+Cavill+Place,+Runcorn+QLD+4113,+Australia&output=embed&z=16"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="CBlends location — 14 Cavill Place, Runcorn">
+      </iframe>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-top">
@@ -399,6 +501,7 @@
         <h4>Navigate</h4>
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#location">Location</a>
         <a href="#booking">Book Now</a>
       </div>
       <div class="footer-col">
