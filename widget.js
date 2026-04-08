@@ -150,10 +150,10 @@
     const dark     = isDark(widget.theme.bg);
     const stripeStyle = {
       base: {
-        color:      '#f1f1f1',
-        fontFamily: 'Poppins, system-ui, sans-serif',
+        color:      '#f0ece4',
+        fontFamily: 'Inter, system-ui, sans-serif',
         fontSize:   '14px',
-        '::placeholder': { color: '#999999' },
+        '::placeholder': { color: '#888880' },
       },
     };
     const cardNumber = elements.create('cardNumber', { style: stripeStyle });
@@ -347,16 +347,16 @@
 
     // Build a normalised theme object for either mode
     const t = dark ? {
-      bg:       '#1a1a1a',
-      surface:  '#111111',
-      border:   'rgba(255,102,0,0.15)',
-      accent:   '#ff6600',
-      accentBg: 'rgba(255,102,0,0.08)',
-      text:     '#f1f1f1',
-      sub:      '#999999',
-      btnText:  '#ffffff',
-      inputBg:  '#0d0d0d',
-      glow:     '0 0 12px rgba(255,102,0,0.2)',
+      bg:       '#0c0c0c',
+      surface:  '#141414',
+      border:   'rgba(201,168,76,0.18)',
+      accent:   '#C9A84C',
+      accentBg: 'rgba(201,168,76,0.07)',
+      text:     '#f0ece4',
+      sub:      '#888880',
+      btnText:  '#0c0c0c',
+      inputBg:  '#111111',
+      glow:     '0 0 12px rgba(201,168,76,0.15)',
     } : {
       bg:       '#ffffff',
       surface:  '#f4f7f4',
@@ -371,7 +371,7 @@
     };
 
     return `
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
       /* ── Reset ── */
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -379,7 +379,7 @@
       /* ── Host ── */
       :host {
         display: block;
-        font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
         color: ${t.text};
       }
 
@@ -584,7 +584,7 @@
         border: 1px solid ${t.border};
         border-radius: 8px;
         font-size: 0.875rem;
-        font-family: 'Poppins', system-ui, sans-serif;
+        font-family: 'Inter', system-ui, sans-serif;
         background: ${t.inputBg};
         color: ${t.text};
         outline: none;
@@ -686,7 +686,7 @@
         border: 1px solid transparent;
         font-size: 0.875rem;
         font-weight: 600;
-        font-family: 'Poppins', system-ui, sans-serif;
+        font-family: 'Inter', system-ui, sans-serif;
         cursor: pointer;
         transition: all 0.2s ease;
       }
@@ -776,7 +776,7 @@
     constructor(scriptEl) {
       this.businessId = scriptEl.getAttribute('data-business-id') || '0';
       // CBlends dark theme — hardcoded, no dynamic DB loading needed
-      this.theme = { bg: 'rgb(26,26,26)' };
+      this.theme = { bg: 'rgb(12,12,12)' };
 
       // Booking state
       this.state = {
